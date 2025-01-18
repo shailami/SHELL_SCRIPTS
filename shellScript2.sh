@@ -210,3 +210,170 @@
 # flag -r to check file has read permission or not 
 # flag -w to check file has write permission or not 
 # flag -x to check file has execute permission or not 
+
+# example for appending output to end of text file
+
+# echo -e "Enter name of file: \c"
+# read file_name
+
+# if [ -f $file_name ]    #-e flag here stands for file exists or not, -f flag to check if exists and is valid or not
+# then
+#   if [ -w $file_name ]
+#   then
+#     echo "Type some text data. to quit press ctrl D"
+#     cat >> $file_name
+#   else
+#     echo "$file_name doesn't has write permission"
+#   fi
+# else
+#   echo "$file_name not exists"
+# fi
+
+
+
+# Shailaja Mishra@ShailajasDevice MINGW64 ~/SCRIPTS (main)
+# $ chmod -w testData
+# Shailaja Mishra@ShailajasDevice MINGW64 ~/SCRIPTS (main)
+# $ ./shellScript2.sh 
+# Enter name of file: testData
+# # testData doesn't has write permission
+# Shailaja Mishra@ShailajasDevice MINGW64 ~/SCRIPTS (main)
+# $ chmod u+w testData
+
+# Shailaja Mishra@ShailajasDevice MINGW64 ~/SCRIPTS (main)
+# $ ls -lrth
+
+
+#Evaluating 2 conditions we use either && or || operator
+# age=25
+
+# if [ $age -gt 18 ] && [ $age -lt 30 ]    # -gt greater than -lt less than  
+# then 
+#   echo "$age is valid age "
+# else
+#   echo "$age not valid age "
+# fi 
+
+# age=50
+
+# if [ $age -gt 18 ] && [ $age -lt 30 ]    # -gt greater than -lt less than  
+# then 
+#   echo "$age is valid age "
+# else
+#   echo "$age not valid age "
+# fi 
+
+
+
+# -a flag stands for &&  .... removed  &&
+
+# age=25
+
+# if [ $age -gt 18 -a $age -lt 30 ]    # -gt greater than -lt less than  
+# then 
+#   echo "$age is valid age "
+# else
+#   echo "$age not valid age "
+# fi 
+
+
+# age=50
+
+# if [ $age -gt 18 -a $age -lt 30 ]    # -gt greater than -lt less than  
+# then 
+#   echo "$age is valid age "
+# else
+#   echo "$age not valid age "
+# fi 
+
+
+# 3 ways of using && operator
+# [] && []
+#  -a
+# [[  &&  ]]
+
+
+# age=25
+
+# if [[ $age -gt 18 && $age -lt 30 ]]    # -gt greater than -lt less than  
+# then 
+#   echo "$age is valid age "
+# else
+#   echo "$age not valid age "
+# fi 
+
+
+# working with OR operator 
+# age=50
+
+# if [ $age -gt 18 ] || [ $age -lt 30 ]    # -gt greater than -lt less than  
+# then 
+#   echo "$age is valid age "
+# else
+#   echo "$age not valid age "
+# fi 
+
+
+
+# age=50
+
+# if [[ $age -eq 18  ||  $age -eq 30 ]]    # -gt greater than -lt less than  
+# then 
+#   echo "$age is valid age "
+# else
+#   echo "$age not valid age "
+# fi 
+
+
+# age=18
+
+# if [ $age -eq 18  -o  $age -eq 30 ]    # -gt greater than -lt less than  
+# then 
+#   echo "$age is valid age "
+# else
+#   echo "$age not valid age "
+# fi 
+
+
+# Or Operator pipe can be used in 3 ways 
+# [] || []
+# [[  ||  ]]
+# [  -o  ]
+
+
+# ARITHMETIC OPERATION EXAMPLES 
+
+# echo 1+1 #outputs the string as it is doesnt performs arithmetic operation
+
+# num1=20
+# num2=5
+# # To perform arithmetic operation we need $(( ))
+
+# echo $(( num1 + num2 ))
+# echo $(( num1 / num2 ))
+# echo $(( num1 * num2 ))
+# echo $(( num1 - num2 ))
+# echo $(( num1 % num2 ))
+
+
+#Alternative way is using expr command and using $ with variable name
+# num1=20
+# num2=5
+# echo $(expr $num1 + $num2 )
+# echo $(expr $num1 / $num2 )
+# echo $(expr $num1 * $num2 )  # throws error because while using expr * is not escaped so use it with \ back slash with it to resolve the error
+# echo $(expr $num1 - $num2 )
+# echo $(expr $num1 % $num2 )
+
+# num1=20
+# num2=5
+# echo $(expr $num1 + $num2 )
+# echo $(expr $num1 / $num2 )
+# echo $(expr $num1 \* $num2 )  
+# echo $(expr $num1 - $num2 )
+# echo $(expr $num1 % $num2 )
+
+
+# arithmetic operations on decimal values 
+
+#  tools used to perform arithmetc operations on decimal numbers 
